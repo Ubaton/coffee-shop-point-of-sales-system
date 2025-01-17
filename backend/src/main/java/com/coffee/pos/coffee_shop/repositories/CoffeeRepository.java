@@ -4,5 +4,5 @@ import com.coffee.pos.coffee_shop.models.Coffee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CoffeeRepository extends JpaRepository<Coffee, Long> {
-    // Additional query methods will be defined here
+    // Additional query methods can be defined here
 } 
