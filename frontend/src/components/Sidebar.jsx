@@ -2,7 +2,7 @@ import { Button } from "@heroui/react";
 
 const Sidebar = () => {
   return (
-    <div className="p-4 bg-amber-100 h-screen min-w-[250px]">
+    <div className="p-4 bg-amber-100 h-screen min-w-[250px] rounded-r-2xl">
       <div className="mb-8">
         <h1 className="text-2xl font-bold">POS System</h1>
       </div>

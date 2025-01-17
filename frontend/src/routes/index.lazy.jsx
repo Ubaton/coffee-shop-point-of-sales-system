@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import CategoryTabs from "../components/CategoryTabs";
 import OrderSummary from "../components/OrderSummary";
 import SearchBar from "../components/SearchBar";
-import CoffeeCard from "../components/CoffeeCard";
+import CoffeeProducts from "../components/CoffeeProducts";
 
 export const Route = createLazyFileRoute("/")({
   component: Index,
@@ -25,9 +25,14 @@ function Index() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/coffees").then((response) => {
-      setCoffees(response.data);
-    });
+    axios
+      .get("http://localhost:8080/api/coffees")
+      .then((response) => {
+        setCoffees(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching coffee products:", error);
+      });
   }, []);
 
   const filteredCoffees = coffees.filter(
@@ -41,7 +46,7 @@ function Index() {
   };
 
   return (
-    <div className="flex bg-amber-50">
+    <div className="flex bg-amber-50 min-h-screen">
       <Sidebar />
       <main className="flex-1 p-4">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -50,10 +55,9 @@ function Index() {
           activeCategory={activeCategory}
           setActiveCategory={setActiveCategory}
         />
-        <div className="grid grid-cols-3 gap-4">
-          {filteredCoffees.map((coffee) => (
-            <CoffeeCard key={coffee.id} coffee={coffee} addToCart={addToCart} />
-          ))}
+
+        <div>
+          <CoffeeProducts coffees={filteredCoffees} addToCart={addToCart} />
         </div>
       </main>
       <OrderSummary cart={cart} />

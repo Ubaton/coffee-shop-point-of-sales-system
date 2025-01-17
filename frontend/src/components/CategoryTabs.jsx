@@ -17,6 +17,7 @@ const CategoryTabs = ({ categories, activeCategory, setActiveCategory }) => {
           {category}
         </Button>
       ))}
+      <div>{/* Coffee Products Here */}</div>
     </div>
   );
 };
