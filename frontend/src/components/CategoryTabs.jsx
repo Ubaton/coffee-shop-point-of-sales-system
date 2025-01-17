@@ -11,7 +11,7 @@ const CategoryTabs = ({ categories, activeCategory, setActiveCategory }) => {
           className={`px-4 py-2 rounded ${
             activeCategory === category
               ? "bg-amber-600 text-white rounded-2xl"
-              : "bg-gray-200 rounded-2xl"
+              : "bg-amber-100 rounded-2xl"
           }`}
         >
           {category}

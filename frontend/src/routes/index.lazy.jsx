@@ -41,7 +41,7 @@ function Index() {
   };
 
   return (
-    <div className="flex">
+    <div className="flex bg-amber-50">
       <Sidebar />
       <main className="flex-1 p-4">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />

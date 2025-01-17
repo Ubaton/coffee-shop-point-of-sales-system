@@ -7,7 +7,7 @@ const OrderSummary = ({ cart }) => {
   );
 
   return (
-    <div className="p-4 bg-gray-100">
+    <div className="p-4 bg-amber-100 min-w-[250px]">
       <h2 className="text-xl font-bold">Current Order</h2>
       <ul>
         {cart.map((item, index) => (
